@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :users, only: [:show, :edit, :update]
+  resources :users, only: [:show, :edit, :update, :index]
   resources :books
 
   root to: "homes#top"
