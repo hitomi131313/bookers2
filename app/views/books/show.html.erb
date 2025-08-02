@@ -1,1 +1,52 @@
 <h2>Book detail</h2>
+
+<!-- ↓ユーザー情報 -->
+<h2>User info</h2>
+  <%= image_tag @user.get_profile_image(100,100) %>
+  <h4>name</h4>
+  <h4><%= @user.name %></h4><br>
+  <h4>introduction</h4>
+  <h4><%= @user.introduction %></h4>
+
+  <p><%= link_to "後でアイコン挿入する箇所", edit_user_path(@user) %></p>
+
+
+
+
+<!-- ↓新規投稿 -->
+<h2>New book</h2>
+
+<%= form_with model: @book do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+  <h4>Option</h4>
+  <%= f.text_area :body %>
+
+  <%= f.submit 'Create Book' %>
+<% end %>
+
+
+
+<!-- ↓一覧 -->
+<h2>Books</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th> </th>
+        <th>Title</th>
+        <th>Opinion</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><%= @books.title %></td>
+        <td><%= @books.body %></td>
+        <td>
+        <%= link_to book_path(@books.id) do %>
+          <%= @books.title %>
+        <% end %>
+      </tr>
+    </tbody>
+  </table>

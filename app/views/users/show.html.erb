@@ -7,11 +7,9 @@
   <h4>introduction</h4>
   <h4><%= @user.introduction %></h4>
 
-  <% if @user == current_user %>
-    <p><%= link_to "後でアイコン挿入する箇所", edit_user_path(@user) %></p>
-  <% else %>
-    <p><%= link_to "後でアイコン挿入する箇所", user_path(@user) %></p>
-  <% end %>
+ 
+  
+  <p><%= link_to "後でアイコン挿入する箇所", edit_user_path(@user) %></p>
 
 
 
