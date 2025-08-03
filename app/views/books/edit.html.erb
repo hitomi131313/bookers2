@@ -16,12 +16,12 @@
     <h1>Editing Book</h1>
   </div>
 
-  <div class = "py-3">
+  <div>
     <%= form_with model: @book do |f|%>
       <label>Title</label><br>
-      <%= f.text_field :title %><br>
+      <%= f.text_field :title , class: "form-control w-100"%><br>
       <label>Opinion</label><br>
-      <%= f.text_field :body %><br>
+      <%= f.text_field :body , class: "form-control w-100"%><br>
 
       <%= f.submit "Update Book" , class: "btn btn-success" %>
     <% end %>

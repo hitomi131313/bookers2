@@ -1,7 +1,7 @@
 <!-- ↓ユーザー情報 -->
 <h2>User info</h2>
   <%= image_tag user.get_profile_image(100,100) %>
-  <table class = "table table-hover">
+  <table class = "table table-borderless custom-border">
     <tbody>
       <tr>
         <td>name</td>
@@ -14,7 +14,7 @@
     </tbody>
   </table>
 
-  <%= link_to edit_user_path(user), class: "btn btn-outline-dark" do %>
+  <%= link_to edit_user_path(user), class: "btn btn-outline-dark  w-100" do %>
     <i class="fa-solid fa-user-gear"></i>
   <% end %>
 
@@ -25,9 +25,9 @@
 
 <%= form_with model: book do |f| %>
   <p>Title</p>
-  <%= f.text_field :title %>
+  <%= f.text_field :title, class: "form-control w-100 mb-2" %>
   <p>Opinion</p>
-  <%= f.text_area :body %>
+  <%= f.text_area :body, class: "form-control w-100 mb-2" %>
 
   <%= f.submit 'Create Book' , class: "btn btn-success" %>
 <% end %>

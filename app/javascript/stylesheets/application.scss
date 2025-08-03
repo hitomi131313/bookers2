@@ -12,3 +12,14 @@
 .btn-success:hover{
   background-color:rgb(4, 131, 72);
 }
+
+.btn-outline-dark:hover{
+  background-color: #7f7e7e;
+}
+
+.custom-border td, .custom-border th {
+  border-top: 1px solid #dee2e6;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
+}
