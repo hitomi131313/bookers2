@@ -1,6 +1,14 @@
 @use '~bootstrap/scss/bootstrap';
 
 .btn-mycolor{
-  background-color: rgb(5, 154, 195);
+  background-color: rgb(3, 165, 209);
   color: #fff
+}
+
+.btn-mycolor:hover{
+  background-color: rgb(5, 125, 159);
+}
+
+.btn-success:hover{
+  background-color:rgb(4, 131, 72);
 }

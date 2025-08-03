@@ -1,10 +1,17 @@
-<h1>welcome to <i class="fa-solid fa-book"></i>Bookers !!</h1>
+<div class = "display: flex; jutify-content: center;">
+  <div class = "mx-auto" style ="width: fit-content;">
 
-<p>
-  <span>in <i class="fa-solid fa-book"></i>Bookers,</span><br>
-  <span>you can share and exchange your opinions , inpressions , and emotions</span><br>
-  <span>about various books!</span>
-</p>
+    <h1 class = "pt-4">welcome to <i class="fa-solid fa-book"></i>Bookers !!</h1>
 
-<%= link_to "Log in", new_user_session_path, class: "btn btn-mycolor" %>
-<%= link_to "Sign up", new_user_registration_path, class: "btn btn-success" %>
+    <p class = "mt-2 py-2">
+      in <i class="fa-solid fa-book"></i>Bookers,<br>
+      you can share and exchange your opinions , inpressions , and emotions<br>
+      about various books!
+    </p>
+
+    <div class = "d-grid gap-2">
+      <%= link_to "Log in", new_user_session_path, class: "btn btn-mycolor btn-outline-primary w-100 my-2" %>
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-success btn-outline-secondary w-100 my-2 text-white" %>
+    </div>
+  </div>
+</div>
