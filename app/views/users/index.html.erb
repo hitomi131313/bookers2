@@ -1,13 +1,13 @@
 
 <!-- ↓ユーザー情報 -->
 <h2>User info</h2>
-  <%#= image_tag @user.get_profile_image(100,100) %>
+  <%= image_tag @user.get_profile_image(100,100) %>
   <h4>name</h4>
-  <h4><%#= @user.name %></h4><br>
+  <h4><%= @user.name %></h4><br>
   <h4>introduction</h4>
-  <h4><%#= @user.introduction %></h4>
+  <h4><%= @user.introduction %></h4>
 
-  <p><%#= link_to "後でアイコン挿入する箇所", edit_user_path(@user) %></p>
+  <p><%= link_to "後でアイコン挿入する箇所", edit_user_path(@user) %></p>
 
 
 
@@ -38,8 +38,9 @@
     <tbody>
     <% @users.each do |users| %>
       <tr>
+        <td><%= image_tag users.get_profile_image(100,100) %></td>
         <td><%= users.name %></td>
-        <%#= link_to "Show", user_path(book.id) %>
+        <td><%= link_to "Show", user_path(@user.id) %></td>
       </tr>
     <% end %>
     </tbody>
