@@ -6,7 +6,9 @@
   <h4>introduction</h4>
   <h4><%= user.introduction %></h4>
 
-  <p><%= link_to "後でアイコン挿入する箇所", edit_user_path(user) %></p>
+  <%= link_to edit_user_path(user) do %>
+    <i class="fa-solid fa-user-gear"></i>
+  <% end %>
 
 
 
