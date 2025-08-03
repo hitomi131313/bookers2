@@ -12,14 +12,13 @@
 
 
 
-
 <!-- ↓新規投稿 -->
 <h2>New book</h2>
 
 <%= form_with model: @book do |f| %>
   <h4>Title</h4>
   <%= f.text_field :title %>
-  <h4>Option</h4>
+  <h4>Opinion</h4>
   <%= f.text_area :body %>
 
   <%= f.submit 'Create Book' %>
@@ -40,13 +39,31 @@
     </thead>
 
     <tbody>
+    <td>
       <tr>
-        <td><%= @books.title %></td>
+      <td>
+        <%= image_tag @books.user.get_profile_image(100,100) %><br>
+        <%= link_to user_path(@user.id) do %>
+          <%= @books.user.name %>
+        <% end %>
+      </td>
+        <td>
+          <%= link_to book_path(@books.id) do %>
+            <%= @books.title %>
+          <% end %>
+        </td>
         <td><%= @books.body %></td>
         <td>
-        <%= link_to book_path(@books.id) do %>
-          <%= @books.title %>
-        <% end %>
+          <% if @books.user == current_user %>
+            <%= link_to "Edit", edit_book_path %>
+          <% end %>
+        </td>
+        <td>
+          <% if @books.user == current_user %>
+            <%= link_to "Destroy", book_path, method: :delete, "data-confirm"=>"本当に消しますか？" %>
+          <% end %>
+        </td>
+
       </tr>
     </tbody>
   </table>

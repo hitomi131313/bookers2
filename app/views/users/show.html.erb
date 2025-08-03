@@ -7,8 +7,6 @@
   <h4>introduction</h4>
   <h4><%= @user.introduction %></h4>
 
- 
-  
   <p><%= link_to "後でアイコン挿入する箇所", edit_user_path(@user) %></p>
 
 
@@ -19,7 +17,7 @@
 <%= form_with model: @book do |f| %>
   <h4>Title</h4>
   <%= f.text_field :title %>
-  <h4>Option</h4>
+  <h4>Opinion</h4>
   <%= f.text_area :body %>
 
   <%= f.submit 'Create Book' %>
@@ -42,13 +40,18 @@
     <tbody>
     <% @books.each do |book| %>
       <tr>
-        <td><%= book.title %></td>
-        <td><%= book.body %></td>
+        <td>
+          <%= image_tag @user.get_profile_image(100,100) %><br>
+          <%= link_to user_path(book.id) do %>
+            <%= @user.name %>
+          <% end %>
+        </td>
         <td>
           <%= link_to book_path(book.id) do %>
             <%= book.title %>
           <% end %>
         </td>
+        <td><%= book.body %></td>
       </tr>
     <% end %>
     </tbody>
