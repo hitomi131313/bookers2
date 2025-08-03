@@ -15,7 +15,10 @@
     <tbody>
       <tr>
       <td>
-        <%= image_tag @books.user.get_profile_image(100,100) %><br>
+        <%= link_to user_path(@user.id) do %>
+          <%= image_tag @books.user.get_profile_image(100,100) %>
+        <% end %>
+        <br>
         <%= link_to user_path(@user.id) do %>
           <%= @books.user.name %>
         <% end %>
